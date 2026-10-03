@@ -1,0 +1,28 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "A simple CLI expense tracker using Node.js, SQLite, and Commander.",
+  "main": "src/index.js",
+  "bin": {
+    "expense": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "web": "node src/server.js",
+    "add": "node src/index.js add",
+    "list": "node src/index.js list",
+    "summary": "node src/index.js summary"
+  },
+  "keywords": [
+    "expense",
+    "tracker",
+    "cli",
+    "sqlite"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "commander": "^12.1.0",
+    "express": "^4.22.3"
+  }
+}

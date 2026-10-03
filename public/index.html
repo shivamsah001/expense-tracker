@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>💰 Expense Tracker</h1>
+  </header>
+
+  <main class="dashboard">
+    <!-- Stats -->
+    <section class="cards">
+      <div class="card">
+        <h3>Total This Month</h3>
+        <p id="total-month">₹0.00</p>
+      </div>
+      <div class="card">
+        <h3>Number of Expenses</h3>
+        <p id="expense-count">0</p>
+      </div>
+      <div class="card">
+        <h3>Top Category</h3>
+        <p id="top-category">—</p>
+      </div>
+    </section>
+
+    <!-- Add expense -->
+    <section class="panel">
+      <h2>Add Expense</h2>
+      <form id="expense-form">
+        <input type="text" id="description" placeholder="Description" required />
+        <input type="number" id="amount" placeholder="Amount" min="0.01" step="0.01" required />
+        <select id="category" required>
+          <option value="">Select category</option>
+          <option value="food">food</option>
+          <option value="travel">travel</option>
+          <option value="bills">bills</option>
+          <option value="shopping">shopping</option>
+          <option value="health">health</option>
+          <option value="other">other</option>
+        </select>
+        <button type="submit">Add Expense</button>
+      </form>
+      <p id="form-error" class="error"></p>
+    </section>
+
+    <!-- Summary -->
+    <section class="panel">
+      <h2>Monthly Summary</h2>
+      <table>
+        <thead>
+          <tr><th>Category</th><th>Total</th></tr>
+        </thead>
+        <tbody id="summary-body"></tbody>
+        <tfoot>
+          <tr><th>TOTAL</th><th id="summary-total">₹0.00</th></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Expense list -->
+    <section class="panel wide">
+      <h2>Expenses</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Description</th><th>Amount</th><th>Category</th><th>Date</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="expense-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
